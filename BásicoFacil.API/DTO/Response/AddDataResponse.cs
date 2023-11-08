@@ -2,6 +2,6 @@
 {
     public class AddDataResponse
     {
-        public String Name { get; set; }
+        public Guid Id { get; set; }
     }
 }

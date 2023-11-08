@@ -31,7 +31,7 @@ namespace BásicoFacil.API.Controllers
         [HttpGet]
         public async Task<ActionResult<GetDataResponse>> GetData() 
         { 
-            return Ok(_dataService.GetData());
+            return Ok(await _dataService.GetData());
         }
     }
 }

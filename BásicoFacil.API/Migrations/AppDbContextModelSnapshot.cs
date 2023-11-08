@@ -61,7 +61,7 @@ namespace BásicoFacil.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Data");
+                    b.ToTable("Data", (string)null);
                 });
 #pragma warning restore 612, 618
         }

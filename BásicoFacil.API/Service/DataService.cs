@@ -22,6 +22,11 @@ namespace BásicoFacil.API.Service
         {
             var map = _mapper.Map<UserData>(request);
 
+            map.Pontos = map.Agua ? 1 : 0;
+            map.Pontos += map.Esgoto ? 1 : 0;
+            map.Pontos += map.Coleta ? 1 : 0;
+            map.Pontos += map.Drenagem ? 1 : 0;
+
             var addCustomer = await _repository.AddData(map);
 
             var response = _mapper.Map<AddDataResponse>(addCustomer);
@@ -39,10 +44,11 @@ namespace BásicoFacil.API.Service
             response.Esgoto = userData.Count(x => x.Esgoto == true);
             response.Coleta = userData.Count(x => x.Coleta == true);
             response.Drenagem = userData.Count(x => x.Drenagem == true);
+            response.Total = userData.Count();
 
             foreach (var data in userData)
             {
-                switch (data.pontos)
+                switch (data.Pontos)
                 {
                     case >= 3:
                         response.Bom++;

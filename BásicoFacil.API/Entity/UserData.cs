@@ -32,6 +32,6 @@ namespace BásicoFacil.API.Entity
         public virtual bool Coleta { get; set;}
         [Required]
         [Column("pontos")]
-        public virtual int pontos { get; set;}
+        public virtual int Pontos { get; set;}
     }
 }

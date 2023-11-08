@@ -9,5 +9,6 @@
         public int Bom { get; set; }
         public int Razoavel { get; set; }
         public int Ruim { get; set; }
+        public int Total { get; set; }
     }
 }
